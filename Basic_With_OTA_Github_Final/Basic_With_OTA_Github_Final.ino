@@ -41,10 +41,10 @@ void setup() {
 
 void loop() {
     digitalWrite(LED_, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(200);                      // wait for a second
+  delay(2200);                      // wait for a second
   digitalWrite(LED_, LOW);   // turn the LED off by making the voltage LOW
      
-    delay(200);
+    delay(22200);
 
     Serial.print(" Active Firmware Version:");
     Serial.println(FirmwareVer);
