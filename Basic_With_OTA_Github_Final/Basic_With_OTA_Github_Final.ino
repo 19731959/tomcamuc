@@ -19,9 +19,9 @@ int ledState = LOW;  // ledState used to set the LED
 unsigned long previousMillis = 0;  // will store last time LED was updated
 
 // constants won't change:
-const long interval = 100;  // interval at which to blink (milliseconds)
+const long interval = 1000;  // interval at which to blink (milliseconds)
 #define URL_fw_Version "https://github.com/19731959/tomcamuc/blob/master/bin-version.txt"
-#define URL_fw_Bin "https://github.com/19731959/tomcamuc/blob/master/Basic_With_OTA_Github_Final/build/esp32.esp32.esp32doit-devkit-v1/Basic_With_OTA_Github_Final.ino.bin"
+#define URL_fw_Bin "https://github.com/19731959/tomcamuc/blob/master/Basic_With_OTA_Github_Final.ino.bin"
 
 void setup() {
  pinMode(ledPin, OUTPUT);
