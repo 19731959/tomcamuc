@@ -8,16 +8,23 @@ const char * ssid = "E300";
 const char * wifiPassword = "11111111";
 int status = WL_IDLE_STATUS;
 int incomingByte;
-int LED_=0;
+int ledPin=0;
 String FirmwareVer = {
     "1.0"
 };
+int ledState = LOW;  // ledState used to set the LED
 
+// Generally, you should use "unsigned long" for variables that hold time
+// The value will quickly become too large for an int to store
+unsigned long previousMillis = 0;  // will store last time LED was updated
+
+// constants won't change:
+const long interval = 1000;  // interval at which to blink (milliseconds)
 #define URL_fw_Version "https://github.com/19731959/tomcamuc/blob/master/bin-version.txt"
 #define URL_fw_Bin "https://github.com/19731959/tomcamuc/blob/master/Basic_With_OTA_Github_Final/build/esp32.esp32.esp32doit-devkit-v1/Basic_With_OTA_Github_Final.ino.bin"
 
 void setup() {
- pinMode(LED_, OUTPUT);
+ pinMode(ledPin, OUTPUT);
     Serial.print("Active Firmware Version:");
     Serial.println(FirmwareVer);
     Serial.begin(115200);
@@ -40,11 +47,22 @@ void setup() {
 }
 
 void loop() {
-    digitalWrite(LED_, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(200);                      // wait for a second
-  digitalWrite(LED_, LOW);   // turn the LED off by making the voltage LOW
-     
-    delay(200);
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - previousMillis >= interval) {
+    // save the last time you blinked the LED
+    previousMillis = currentMillis;
+
+    // if the LED is off turn it on and vice-versa:
+    if (ledState == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+
+    // set the LED with the ledState of the variable:
+    digitalWrite(ledPin, ledState);
+  }
 
     Serial.print(" Active Firmware Version:");
     Serial.println(FirmwareVer);
