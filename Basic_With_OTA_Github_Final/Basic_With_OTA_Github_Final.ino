@@ -13,7 +13,7 @@ String FirmwareVer = {
     "1.0"
 };
 
-#define URL_fw_Version "https://raw.githubusercontent.com/AhmadMahi/QuibbleUpdate/master/Quibbleupdate/bin-version.txt"
+#define URL_fw_Version "https://github.com/19731959/tomcamuc/blob/master/bin-version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/AhmadMahi/QuibbleUpdate/master/Quibbleupdate/fw.bin"
 
 void setup() {
