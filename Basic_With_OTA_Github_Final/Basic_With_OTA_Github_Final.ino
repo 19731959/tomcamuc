@@ -14,7 +14,7 @@ String FirmwareVer = {
 };
 
 #define URL_fw_Version "https://github.com/19731959/tomcamuc/blob/master/bin-version.txt"
-#define URL_fw_Bin "https://raw.githubusercontent.com/AhmadMahi/QuibbleUpdate/master/Quibbleupdate/fw.bin"
+#define URL_fw_Bin "https://github.com/19731959/tomcamuc/blob/master/Basic_With_OTA_Github_Final/build/esp32.esp32.esp32doit-devkit-v1/Basic_With_OTA_Github_Final.ino.bin"
 
 void setup() {
  pinMode(LED_, OUTPUT);
@@ -41,10 +41,10 @@ void setup() {
 
 void loop() {
     digitalWrite(LED_, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(2200);                      // wait for a second
+  delay(200);                      // wait for a second
   digitalWrite(LED_, LOW);   // turn the LED off by making the voltage LOW
      
-    delay(22200);
+    delay(200);
 
     Serial.print(" Active Firmware Version:");
     Serial.println(FirmwareVer);
